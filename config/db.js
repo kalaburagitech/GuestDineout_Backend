@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        // Ensure the Mongo URI is correctly set in your .env file
         const uri = process.env.MONGO_URI;
         
         if (!uri) {
@@ -10,7 +9,7 @@ const connectDB = async () => {
             process.exit(1);
         }
 
-        await mongoose.connect(uri);  // No need for the deprecated options anymore
+        await mongoose.connect(uri);  // No need for deprecated options anymore
         console.log('MongoDB Connected');
     } catch (error) {
         console.error('Database connection failed:', error.message);
